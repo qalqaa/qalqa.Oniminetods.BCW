@@ -36,6 +36,13 @@ a:focus {
   text-shadow: 0 0 15px var(--color-accent);
 }
 
+h1,
+h2,
+h3 {
+  color: var(--color-accent);
+  font-size: 30px;
+}
+
 @media (min-width: 1024px) {
   body {
     /* display: flex;

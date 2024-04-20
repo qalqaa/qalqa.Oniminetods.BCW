@@ -28,8 +28,6 @@
 }
 
 .hero__title {
-    color: var(--color-accent);
-    font-size: 30px;
     margin-bottom: 1.5rem;
 }
 

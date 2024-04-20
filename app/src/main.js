@@ -12,14 +12,18 @@ app.mount("#app");
 
 // window.addEventListener("scroll", function () {
 //   let scrolled = window.scrollY;
-//   const threshold = 400; // Порог прокрутки, после которого будет изменен фон
+//   const threshold = 200; // Порог прокрутки, после которого будет изменен фон
 //   const body = this.document.body;
 
 //   if (scrolled > threshold) {
 //     console.log("changed");
+
 //     body.classList.add("background-stack");
+//     body.classList.remove("background-main");
 //   } else {
 //     console.log("removed");
+
+//     body.classList.add("background-main");
 //     body.classList.remove("background-stack");
 //   }
 // });

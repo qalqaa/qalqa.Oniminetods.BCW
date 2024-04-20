@@ -61,19 +61,14 @@
   font-weight: normal;
 }
 
-/* .background-stack {
-  background: linear-gradient(0.25turn, var(--color-background), red);
-} */
-
-.container {
-  max-width: 1024px;
-  margin: 0 auto;
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   /* min-height: 100vh; */
-  color: var(--color-text);
   background: linear-gradient(0.1turn, var(--color-background), var(--color-accent-mute));
+  color: var(--color-text);
   background-attachment: fixed;
   transition:
     color 0.5s,
@@ -106,4 +101,9 @@ body ul {
 body button {
   outline: none;
   border: none;
+}
+
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
 }

@@ -2,18 +2,22 @@
 import { RouterLink, RouterView } from "vue-router";
 import About from "./components/About.vue"
 import Stack from "./components/Stack.vue"
+import Contacts from "./components/Contacts.vue"
+import Feature from './components/Feature.vue';
+import Tooltip from './components/Tooltip.vue';
 </script>
 
 <template>
-  <header>
+  <header id="header">
     <div class="container">
       <nav>
         <p class="logo">[LOGO]</p>
-        <ul class="nav-list">
+        <ul class="header__nav-list">
           <li><a href="#about">About</a></li>
-          <li><a href="">Stack</a></li>
-          <li><a href="">Contacts</a></li>
-          <li><a href="">Footer</a></li>
+          <li><a href="#stack">Stack</a></li>
+          <li><a href="#contacts">Contacts</a></li>
+          <li><a href="#feature">Feature</a></li>
+          <li><a href="#footer">Footer</a></li>
         </ul>
         <!-- TODO сделать понятно что это кнопка для темы -->
         <label class="switch">
@@ -25,9 +29,35 @@ import Stack from "./components/Stack.vue"
   </header>
 
   <body>
-    <About id="about" />
-    <Stack />
+    <div id="about">
+      <About />
+    </div>
+
+    <div id="stack">
+      <Stack />
+    </div>
+
+    <div id="contacts">
+      <Contacts />
+    </div>
+    <div id="feature">
+      <Feature />
+    </div>
   </body>
+  <footer id="footer">
+    <div class="container">
+      <nav>
+        <ul class="footer__nav-list">
+          <li><a href="#about">About</a></li>
+          <li><a href="#stack">Stack</a></li>
+          <li><a href="#contacts">Contacts</a></li>
+          <li><a href="#feature">Feature</a></li>
+          <li><a href="#header">Header</a></li>
+          <li> <a href="">Secret Link</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
   <RouterView />
 </template>
 
@@ -45,11 +75,17 @@ nav {
 }
 
 .logo {
-  width: 6%;
+  width: 8%;
 }
 
-.nav-list {
-  width: 24%;
+.header__nav-list {
+  width: 32%;
+  justify-content: space-between;
+  display: flex;
+}
+
+.footer__nav-list {
+  width: 100%;
   justify-content: space-between;
   display: flex;
 }
@@ -112,5 +148,11 @@ input:checked+.slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+footer {
+  background-color: var(--vt-c-black-soft);
+  padding: 1.2rem 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
 }
 </style>

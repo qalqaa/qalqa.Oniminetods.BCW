@@ -106,13 +106,18 @@
     margin-right: 8px;
 }
 
+.light .stack__item .tooltip {
+    background-color: var(--vt-c-white-soft);
+    box-shadow: 0 0 5px var(--vt-c-black-soft);
+}
+
 .stack__item .tooltip {
     position: absolute;
     opacity: 0;
     height: 0;
     visibility: hidden;
     width: 140px;
-    background-color: var(--color-background);
+    background-color: var(--vt-c-black-soft);
     text-align: center;
     border-radius: 6px;
     padding: 7px;

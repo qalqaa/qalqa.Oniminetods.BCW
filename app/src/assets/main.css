@@ -26,8 +26,12 @@ a {
 }
 
 @media (hover: hover) {
-  a:hover {
+  .dark a:hover {
     text-shadow: 0 0 15px var(--color-accent);
+  }
+
+  .light a:hover {
+    text-shadow: 0 0 10px var(--color-accent-soft);
   }
 }
 

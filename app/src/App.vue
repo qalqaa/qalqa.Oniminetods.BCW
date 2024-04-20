@@ -5,13 +5,13 @@ import Stack from "./components/Stack.vue"
 import Contacts from "./components/Contacts.vue"
 import Feature from './components/Feature.vue';
 import Tooltip from './components/Tooltip.vue';
-</script>
 
+</script>
 <template>
   <header id="header">
     <div class="container">
       <nav>
-        <p class="logo">[LOGO]</p>
+        <h1 class="logo">q<i class="bi bi-braces "></i>qa</h1>
         <ul class="header__nav-list">
           <li><a href="#about">About</a></li>
           <li><a href="#stack">Stack</a></li>
@@ -20,8 +20,9 @@ import Tooltip from './components/Tooltip.vue';
           <li><a href="#footer">Footer</a></li>
         </ul>
         <!-- TODO сделать понятно что это кнопка для темы -->
+
         <label class="switch">
-          <input type="checkbox">
+          <input id="theme-toggle" type="checkbox">
           <span class="slider round"></span>
         </label>
       </nav>
@@ -63,10 +64,21 @@ import Tooltip from './components/Tooltip.vue';
 
 <style scoped>
 header {
+  transition: 0.3s background-color ease-in-out;
   margin-bottom: 4vh;
-  background-color: var(--vt-c-black-soft);
   padding: 1.2rem 1rem;
+  text-align: center;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+}
+
+.light header,
+.light footer {
+  background-color: var(--vt-c-white-mute);
+}
+
+.dark header,
+.dark footer {
+  background-color: var(--vt-c-black-soft);
 }
 
 nav {
@@ -75,6 +87,7 @@ nav {
 }
 
 .logo {
+  font-size: 20px;
   width: 8%;
 }
 
@@ -116,13 +129,17 @@ nav {
 }
 
 .slider:before {
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-image: url('./img/moon.svg');
+  background-size: 50%;
   position: absolute;
   content: "";
   height: 21px;
   width: 21px;
   left: 3.3px;
   bottom: 2.5px;
-  background-color: var(--vt-c-white);
+  background-color: var(--vt-c-black-mute);
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -131,14 +148,19 @@ input:checked+.slider {
   background-color: var(--color-accent);
 }
 
+input:checked+.slider::before {
+  background-image: url('./img/sun.svg');
+  background-color: var(--vt-c-white)
+}
+
 input:checked+.slider {
   box-shadow: 0 0 5px var(--color-accent);
 }
 
 input:checked+.slider:before {
-  -webkit-transform: translateX(19.5px);
-  -ms-transform: translateX(19.5x);
-  transform: translateX(19.5px);
+  -webkit-transform: translateX(17px);
+  -ms-transform: translateX(17px);
+  transform: translateX(17px);
 }
 
 /* Rounded sliders */
@@ -151,7 +173,6 @@ input:checked+.slider:before {
 }
 
 footer {
-  background-color: var(--vt-c-black-soft);
   padding: 1.2rem 1rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
 }

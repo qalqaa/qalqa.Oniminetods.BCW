@@ -9,6 +9,7 @@
   --vt-c-black-mute: #282828;
 
   --color-accent: #1cdb63;
+  --color-accent-soft: #00ff5e;
   --color-accent-mute: #0e692f;
 
   --vt-c-indigo: #2c3e50;
@@ -65,14 +66,21 @@ html {
   scroll-behavior: smooth;
 }
 
+.dark {
+  background-color: var(--vt-c-black);
+  color: var(--vt-c-text-dark-2);
+}
+
+.light {
+  background-color: var(--vt-c-white-soft);
+  color: var(--vt-c-text-light-1);
+}
+
 body {
   /* min-height: 100vh; */
-  background: linear-gradient(0.1turn, var(--color-background), var(--color-accent-mute));
-  color: var(--color-text);
-  background-attachment: fixed;
   transition:
-    color 0.5s,
-    background-color 0.5s;
+    background-color 0.3s ease-in-out,
+    color 0.3s ease-in-out;
   line-height: 1.6;
   font-family:
     Inter,
@@ -93,12 +101,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-body ul {
+ul {
   list-style-type: none;
   padding: 0;
 }
 
-body button {
+button {
   outline: none;
   border: none;
 }

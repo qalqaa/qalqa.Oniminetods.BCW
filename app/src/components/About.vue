@@ -19,12 +19,16 @@
 </template>
 
 <style scoped>
-
 .section-hero {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 3vh;
+    padding-bottom: 3vh;
+    background: radial-gradient(var(--color-accent-mute)0% , transparent 50%);
+}
+
+.light .section-hero{
+    background: 0;
 }
 
 .hero__title {

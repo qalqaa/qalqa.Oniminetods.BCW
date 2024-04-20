@@ -1,17 +1,19 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
+import About from "./components/About.vue"
+import Stack from "./components/Stack.vue"
 </script>
 
 <template>
   <header>
-    <div class="wrapper">
+    <div class="container">
       <nav>
         <p class="logo">[LOGO]</p>
         <ul class="nav-list">
-          <li><a href="/">About</a></li>
-          <li><a href="/">Stack</a></li>
-          <li><a href="/">Contacts</a></li>
-          <li><a href="/">Footer</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="">Stack</a></li>
+          <li><a href="">Contacts</a></li>
+          <li><a href="">Footer</a></li>
         </ul>
         <!-- TODO сделать понятно что это кнопка для темы -->
         <label class="switch">
@@ -23,14 +25,15 @@ import { RouterLink, RouterView } from "vue-router";
   </header>
 
   <body>
+    <About id="about" />
+    <Stack />
   </body>
-
   <RouterView />
 </template>
 
 <style scoped>
 header {
-  margin-bottom: 10vh;
+  margin-bottom: 4vh;
   background-color: var(--vt-c-black-soft);
   padding: 1.2rem 1rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);

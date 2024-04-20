@@ -9,6 +9,7 @@
   --vt-c-black-mute: #282828;
 
   --color-accent: #1cdb63;
+  --color-accent-mute: #0e692f;
 
   --vt-c-indigo: #2c3e50;
 
@@ -60,10 +61,20 @@
   font-weight: normal;
 }
 
+/* .background-stack {
+  background: linear-gradient(0.25turn, var(--color-background), red);
+} */
+
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
 body {
   /* min-height: 100vh; */
   color: var(--color-text);
-  background: var(--color-background);
+  background: linear-gradient(0.1turn, var(--color-background), var(--color-accent-mute));
+  background-attachment: fixed;
   transition:
     color 0.5s,
     background-color 0.5s;

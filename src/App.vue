@@ -219,7 +219,7 @@ footer {
     z-index: 1001;
   }
 
-  .logo_sm{
+  .logo_sm {
     text-align: center;
     padding-left: 20px;
   }
@@ -255,10 +255,19 @@ footer {
     background: var(--vt-c-white-mute);
   }
 
+  .light .burger::before,
+  .light .burger::after {
+    background: var(--vt-c-black-mute)
+  }
+
   .burger::before {
     top: 0;
     box-shadow: 0 11px 0 var(--vt-c-white-mute);
     transition: box-shadow .3s .15s, top .3s .15s, transform .3s;
+  }
+
+  .light .burger::before {
+    box-shadow: 0 11px 0 var(--vt-c-black-mute);
   }
 
   .burger::after {
@@ -299,6 +308,11 @@ footer {
     width: 180px;
     border-radius: 0px 10px 10px 0px;
     justify-items: center;
+  }
+
+  .light .menu-list {
+    background: var(--vt-c-white-mute);
+    box-shadow: 0 0 20px var(--vt-c-black-mute);
   }
 
   .menu-item {

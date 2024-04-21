@@ -61,7 +61,6 @@
     .contacts-list {
         margin-left: 0px;
         grid-template-columns: repeat(1, 1fr);
-    
     }  
 }
 </style>

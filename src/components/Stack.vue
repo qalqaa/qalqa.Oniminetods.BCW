@@ -184,10 +184,6 @@
         z-index: 2;
     }
 
-    .stack__item:nth-child(3) .item-img {
-        position: relative;
-    }
-
     .stack__item:nth-child(1) {
         z-index: 6;
     }

@@ -29,6 +29,7 @@ app.mount("#app");
 // });
 
 const themeToggle = document.getElementById("theme-toggle");
+const themeToggleSm = document.getElementById("theme-toggle_sm");
 // themeEnum = { dark: 0, light: 1 }
 
 const body = document.body;
@@ -43,3 +44,14 @@ themeToggle.addEventListener("change", function () {
     body.classList.remove("light");
   }
 });
+
+themeToggleSm.addEventListener("change", function () {
+    const themeOutput = ["dark", "light"];
+    if (this.checked) {
+      body.classList.add("light");
+      body.classList.remove("dark");
+    } else {
+      body.classList.add("dark");
+      body.classList.remove("light");
+    }
+  });

@@ -4,29 +4,49 @@ import About from "./components/About.vue"
 import Stack from "./components/Stack.vue"
 import Contacts from "./components/Contacts.vue"
 import Feature from './components/Feature.vue';
-import Tooltip from './components/Tooltip.vue';
 
 </script>
 <template>
   <header id="header">
-    <div class="container">
-      <nav>
-        <h1 class="logo">q<i class="bi bi-braces "></i>qa</h1>
-        <ul class="header__nav-list">
-          <li><a href="#about">About</a></li>
-          <li><a href="#stack">Stack</a></li>
-          <li><a href="#contacts">Contacts</a></li>
-          <li><a href="#feature">Feature</a></li>
-          <li><a href="#footer">Footer</a></li>
-        </ul>
-        <!-- TODO сделать понятно что это кнопка для темы -->
+    <div id="header_sm">
+      <div class="menu">
+        <input type="checkbox" id="burger-checkbox" class="burger-checkbox">
+        <label for="burger-checkbox" class="burger"></label>
 
-        <label class="switch">
-          <input id="theme-toggle" type="checkbox">
-          <span class="slider round"></span>
-        </label>
-      </nav>
+        <ul class="menu-list">
+          <h1 class="logo_sm">q<i class="bi bi-braces "></i>qa</h1>
+          <li><a href="#" class="menu-item">About</a></li>
+          <li><a href="#" class="menu-item">Stack</a></li>
+          <li><a href="#" class="menu-item">Contacts</a></li>
+          <li><a href="#" class="menu-item">Feature</a></li>
+          <li><a href="#footer" class="menu-item">Footer</a></li>
+          <label class="switch">
+            <input id="theme-toggle_sm" type="checkbox">
+            <span class="slider round"></span>
+          </label>
+        </ul>
+      </div>
     </div>
+
+    <div class="header_md">
+      <div class="container">
+        <nav>
+          <h1 class="logo">q<i class="bi bi-braces "></i>qa</h1>
+          <ul class="header__nav-list">
+            <li><a href="#about">About</a></li>
+            <li><a href="#stack">Stack</a></li>
+            <li><a href="#contacts">Contacts</a></li>
+            <li><a href="#feature">Feature</a></li>
+            <li><a href="#footer">Footer</a></li>
+          </ul>
+          <label class="switch">
+            <input id="theme-toggle" type="checkbox">
+            <span class="slider round"></span>
+          </label>
+        </nav>
+      </div>
+    </div>
+
   </header>
 
   <body>
@@ -63,11 +83,16 @@ import Tooltip from './components/Tooltip.vue';
 </template>
 
 <style scoped>
-header {
+#header_sm {
+  display: none;
+}
+
+#header {
   transition: 0.3s background-color ease-in-out;
   margin-bottom: 4vh;
   padding: 1.2rem 1rem;
   text-align: center;
+  font-size: clamp(1rem, 1.5vw, 1.1rem);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
 }
 
@@ -175,5 +200,121 @@ input:checked+.slider:before {
 footer {
   padding: 1.2rem 1rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width:992px) {
+  #header {
+    padding: 0;
+    background: transparent;
+    box-shadow: 0 0 0;
+  }
+
+  .header_md {
+    display: none;
+  }
+
+  #header_sm {
+    position: fixed;
+    display: block;
+    z-index: 1001;
+  }
+
+  .logo_sm{
+    text-align: center;
+    padding-left: 20px;
+  }
+
+  .burger-checkbox {
+    position: absolute;
+    visibility: hidden;
+  }
+
+  .burger {
+    position: relative;
+    z-index: 5;
+    cursor: pointer;
+    display: block;
+    position: relative;
+    border: none;
+    background: transparent;
+    width: 30px;
+    height: 25px;
+    left: 15px;
+    top: -10px
+  }
+
+  .burger::before,
+  .burger::after {
+    content: '';
+    left: 0;
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 4px;
+    border-radius: 10px;
+    background: var(--vt-c-white-mute);
+  }
+
+  .burger::before {
+    top: 0;
+    box-shadow: 0 11px 0 var(--vt-c-white-mute);
+    transition: box-shadow .3s .15s, top .3s .15s, transform .3s;
+  }
+
+  .burger::after {
+    bottom: 0;
+    transition: bottom .3s .15s, transform .3s;
+  }
+
+  .burger-checkbox:checked+.burger::before {
+    top: 11px;
+    transform: rotate(45deg);
+    box-shadow: 0 6px 0 rgba(0, 0, 0, 0);
+    transition: box-shadow .15s, top .3s, transform .3s .15s;
+  }
+
+  .burger-checkbox:checked+.burger::after {
+    bottom: 10px;
+    transform: rotate(-45deg);
+    transition: bottom .3s, transform .3s .15s;
+  }
+
+  .menu {
+    width: 0;
+  }
+
+  .menu-list {
+    top: -36px;
+    left: 0;
+    position: absolute;
+    display: grid;
+    gap: 12px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    margin: 0;
+    background: var(--vt-c-black-soft);
+    list-style-type: none;
+    transform: translateX(-100%);
+    transition: .3s;
+    width: 180px;
+    border-radius: 0px 10px 10px 0px;
+    justify-items: center;
+  }
+
+  .menu-item {
+    display: block;
+    padding: 8px;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .menu-item:hover {
+    background: rgba(255, 255, 255, .2)
+  }
+
+  .burger-checkbox:checked~.menu-list {
+    transform: translateX(0);
+  }
 }
 </style>

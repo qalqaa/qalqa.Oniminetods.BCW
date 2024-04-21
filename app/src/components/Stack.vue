@@ -170,6 +170,53 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 0.5vh;
 }
+
+@media (max-width: 768px) {
+    .stack__list {
+        z-index: 0;
+        max-width: 350px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .stack__item:not(:nth-child(3)) .tooltip {
+        left: 0;
+        z-index: 2;
+    }
+
+    .stack__item:nth-child(3) .item-img {
+        position: relative;
+    }
+
+    .stack__item:nth-child(1) {
+        z-index: 6;
+    }
+
+    .stack__item:nth-child(2) {
+        z-index: 5;
+    }
+
+    .stack__item:nth-child(3) {
+        z-index: 4;
+    }
+
+    .stack__item:nth-child(4) {
+        z-index: 3;
+    }
+
+    .stack__item:nth-child(5) {
+        z-index: 2;
+    }
+
+    .stack__item:nth-child(6) {
+        z-index: 1;
+    }
+
+    .stack__item .tooltip {
+        left: 0%;
+        z-index: 1001;
+    }
+}
 </style>
 
 <script setup></script>

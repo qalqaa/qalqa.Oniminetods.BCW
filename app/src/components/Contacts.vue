@@ -53,5 +53,15 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 0.5vh;
+
+
+}
+
+@media (max-width: 768px) {
+    .contacts-list {
+        margin-left: 0px;
+        grid-template-columns: repeat(1, 1fr);
+    
+    }  
 }
 </style>

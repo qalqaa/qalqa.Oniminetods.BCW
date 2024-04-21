@@ -24,10 +24,10 @@
     flex-direction: column;
     align-items: center;
     padding-bottom: 3vh;
-    background: radial-gradient(var(--color-accent-mute)0% , transparent 50%);
+    background: radial-gradient(var(--color-accent-mute)0%, transparent 50%);
 }
 
-.light .section-hero{
+.light .section-hero {
     background: 0;
 }
 
@@ -54,6 +54,21 @@
 
 .hero__image {
     width: 500px;
+}
+
+@media (max-width: 768px) {
+    .hero__image-container {
+        width: 350px;
+        height: 350px;
+    }
+
+    .hero__image{
+        width: 350px;
+    }
+
+    .hero__about{
+        max-width: 350px;
+    }
 }
 </style>
 

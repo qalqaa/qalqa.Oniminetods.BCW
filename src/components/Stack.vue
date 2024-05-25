@@ -4,53 +4,56 @@
 <template>
     <div class="container">
         <div class="section-stack">
-            <h2 class="stack__title">My Stack</h2>
+            <h2 class="stack__title">{{ $t('stackTitle') }}</h2>
             <ul class="stack__list">
                 <li class="stack__item">
                     <img class="item-img" src="../img/HTML.svg" alt="">
                     <p class="item-title">HTML</p>
-                    <span class="tooltip">I had anvanced skills in html layout, so it's baaaase...</span>
+                    <span class="tooltip">{{ $t('stackHtml') }}</span>
                 </li>
                 <li class="stack__item">
                     <img class="item-img" src="../img/CSS.svg" alt="">
                     <p class="item-title">CSS/SCSS</p>
-                    <span class="tooltip">It's also base like html, so who can't bruh</span>
+                    <span class="tooltip">{{ $t('stackCss') }}</span>
                 </li>
                 <li class="stack__item">
                     <img class="item-img" src="../img/JavaScript.svg" alt="">
                     <img class="item-img" src="../img/TypeScript.svg" alt="">
                     <p class="item-title">JS/TypeScript</p>
-                    <span class="tooltip">It's my main code intrument, thereby i can use any frameworks and make another
-                        features.</span>
+                    <span class="tooltip">{{ $t('stackJS') }}</span>
                 </li>
                 <li class="stack__item">
                     <img class="item-img" src="../img/Angular.svg" alt="">
                     <p class="item-title">Angular</p>
-                    <span class="tooltip">My favorite framework, i've been studying it for a year, and i feel confident
-                        in it.</span>
+                    <span class="tooltip">{{ $t('stackAngular') }}</span>
                 </li>
                 <li class="stack__item">
                     <img class="item-img" src="../img/React.svg" alt="">
                     <p class="item-title">React</p>
-                    <span class="tooltip">Tried it framework a few times, it's easy and floaty, but not liked it.</span>
+                    <span class="tooltip">{{ $t('stackReact') }}.</span>
                 </li>
                 <li class="stack__item">
                     <img class="item-img" src="../img/Vue.svg" alt="">
                     <p class="item-title">VueJS</p>
-                    <span class="tooltip">It's my first project on Vue sooo...</span>
+                    <span class="tooltip">{{ $t('stackVueJS') }}</span>
                 </li>
             </ul>
             <div class="stack__descr">
-                <p class="stack__descr-text">It's a bit about tech's that i can do, well or not at all, but i'm
-                    studying. </p>
-                <p class="stack__descr-text">That some links to my projects: </p>
+                <p class="stack__descr-text">{{ $t('stackDescr') }} </p>
+                <p class="stack__descr-text">{{ $t('stackProjectsTitle') }}</p>
                 <ul class="descr-list">
-                    <li class="descr-list__item">Object: <a href="">Link</a> (Some shit)</li>
-                    <li class="descr-list__item">Object: <a href="">Link</a> (Some shit)</li>
-                    <li class="descr-list__item">Object: <a href="">Link</a> (Some shit)</li>
-                    <li class="descr-list__item">Object: <a href="">Link</a> (Some shit)</li>
-                    <li class="descr-list__item">Object: <a href="">Link</a> (Some shit)</li>
-                    <li class="descr-list__item">Object: <a href="">Link</a> (Some shit)</li>
+                    <li class="descr-list__item">{{ $t('stackObject') }}: <a href="">Link</a> {{ $t('stackObjectDescr')
+                        }}</li>
+                    <li class="descr-list__item">{{ $t('stackObject') }}: <a href="">Link</a> {{ $t('stackObjectDescr')
+                        }}</li>
+                    <li class="descr-list__item">{{ $t('stackObject') }}: <a href="">Link</a> {{ $t('stackObjectDescr')
+                        }}</li>
+                    <li class="descr-list__item">{{ $t('stackObject') }}: <a href="">Link</a> {{ $t('stackObjectDescr')
+                        }}</li>
+                    <li class="descr-list__item">{{ $t('stackObject') }}: <a href="">Link</a> {{ $t('stackObjectDescr')
+                        }}</li>
+                    <li class="descr-list__item">{{ $t('stackObject') }}: <a href="">Link</a> {{ $t('stackObjectDescr')
+                        }}</li>
                 </ul>
             </div>
         </div>

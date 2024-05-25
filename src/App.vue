@@ -5,6 +5,14 @@ import Stack from "./components/Stack.vue"
 import Contacts from "./components/Contacts.vue"
 import Feature from './components/Feature.vue';
 
+import { useI18n } from "vue-i18n";
+
+const { t, locale } = useI18n();
+
+const changeLocale = (newLocale) => {
+  locale.value = newLocale;
+};
+
 </script>
 <template>
   <header id="header">
@@ -15,11 +23,11 @@ import Feature from './components/Feature.vue';
 
         <ul class="menu-list">
           <h1 class="logo_sm">q<i class="bi bi-braces "></i>qa</h1>
-          <li><a href="#" class="menu-item">About</a></li>
-          <li><a href="#" class="menu-item">Stack</a></li>
-          <li><a href="#" class="menu-item">Contacts</a></li>
-          <li><a href="#" class="menu-item">Feature</a></li>
-          <li><a href="#footer" class="menu-item">Footer</a></li>
+          <li><a href="#" class="menu-item">{{ $t('headerAbout') }}</a></li>
+          <li><a href="#" class="menu-item">{{ $t('headerStack') }}</a></li>
+          <li><a href="#" class="menu-item">{{ $t('headerContacts') }}</a></li>
+          <li><a href="#" class="menu-item">{{ $t('headerFeature') }}</a></li>
+          <li><a href="#footer" class="menu-item">{{ $t('headerFooter') }}</a></li>
           <label class="switch">
             <input id="theme-toggle_sm" type="checkbox">
             <span class="slider round"></span>
@@ -33,16 +41,31 @@ import Feature from './components/Feature.vue';
         <nav>
           <h1 class="logo">q<i class="bi bi-braces "></i>qa</h1>
           <ul class="header__nav-list">
-            <li><a href="#about">About</a></li>
-            <li><a href="#stack">Stack</a></li>
-            <li><a href="#contacts">Contacts</a></li>
-            <li><a href="#feature">Feature</a></li>
-            <li><a href="#footer">Footer</a></li>
+            <li><a href="#about">{{ $t('headerAbout') }}</a></li>
+            <li><a href="#stack">{{ $t('headerStack') }}</a></li>
+            <li><a href="#contacts">{{ $t('headerContacts') }}</a></li>
+            <!-- <li><a href="#feature">{{ $t('headerFeature') }}</a></li> -->
+            <li><a href="#footer">{{ $t('headerFooter') }}</a></li>
           </ul>
-          <label class="switch">
-            <input id="theme-toggle" type="checkbox">
-            <span class="slider round"></span>
-          </label>
+          <div>
+            <div class="translate">
+              <i id="translate__icon" class="bi bi-translate"></i>
+              <ul class="translate__list">
+                <li @click="changeLocale('en')" class="translate__item">
+                  <input class="radio" id="eng" type="radio" name="language" value="English" checked>
+                  <label class="translate__label" for="eng">English</label>
+                </li>
+                <li @click="changeLocale('ru')" class="translate__item">
+                  <input class="radio" id="rus" type="radio" name="language" value="Русский">
+                  <label class="translate__label" for="rus">Руссккий</label>
+                </li>
+              </ul>
+            </div>
+            <label class="switch">
+              <input id="theme-toggle" type="checkbox">
+              <span class="slider round"></span>
+            </label>
+          </div>
         </nav>
       </div>
     </div>
@@ -61,20 +84,20 @@ import Feature from './components/Feature.vue';
     <div id="contacts">
       <Contacts />
     </div>
-    <div id="feature">
+    <!-- <div id="feature">
       <Feature />
-    </div>
+    </div> -->
   </body>
   <footer id="footer">
     <div class="container">
       <nav>
         <ul class="footer__nav-list">
-          <li><a href="#about">About</a></li>
-          <li><a href="#stack">Stack</a></li>
-          <li><a href="#contacts">Contacts</a></li>
-          <li><a href="#feature">Feature</a></li>
-          <li><a href="#header">Header</a></li>
-          <li> <a href="">Secret Link</a></li>
+          <li><a href="#about">{{ $t('headerAbout') }}</a></li>
+          <li><a href="#stack">{{ $t('headerStack') }}</a></li>
+          <li><a href="#contacts">{{ $t('headerContacts') }}</a></li>
+          <!-- <li><a href="#feature">{{ $t('headerFeature') }}</a></li> -->
+          <li><a href="#header">{{ $t('footerHeader') }}</a></li>
+          <li> <a href="">{{ $t('footerSecretLink') }}</a></li>
         </ul>
       </nav>
     </div>
@@ -126,6 +149,63 @@ nav {
   width: 100%;
   justify-content: space-between;
   display: flex;
+}
+
+.translate {
+  position: relative;
+  display: inline-block;
+  margin-right: 20px;
+}
+
+#translate__icon {
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.translate__list {
+
+  padding: 5px 10px;
+  border-radius: 5px;
+  position: absolute;
+  left: -30px;
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+  height: auto;
+  visibility: hidden;
+  transform: translateY(-10px);
+}
+
+.dark .translate__list {
+  background-color: var(--vt-c-black-mute);
+}
+
+.light .translate__list {
+  box-shadow: 0 0 5px var(--vt-c-black-soft);
+  background-color: var(--vt-c-white-mute);
+}
+
+.active__list {
+  transform: translateY(5px);
+  opacity: 1;
+  visibility: visible;
+}
+
+.translate__item__selected {
+  color: var(--color-accent)
+}
+
+.translate__label {
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.radio {
+  width: 0
+}
+
+.radio:checked+.translate__label {
+  color: var(--color-accent);
+  text-shadow: 0 0 10px var(--color-accent);
 }
 
 .switch {

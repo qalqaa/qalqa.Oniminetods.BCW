@@ -4,7 +4,7 @@
 <template>
     <div class="container">
         <div class="section-contacts">
-            <h2 class="contacts__title">Contacts</h2>
+            <h2 class="contacts__title">{{ $t('contactsTitle') }}</h2>
             <ul class="contacts-list">
                 <li class="contact-list__item">
                     <a href="https://t.me/qalqaa" class="item-btn"><i class="bi bi-telegram"></i> @qalqaa</a>
@@ -23,7 +23,7 @@
                 </li>
                 <li class="contact-list__item">
                     <a href="mailto:andreybas04@gmail.com" class="item-btn"><i class="bi bi-envelope-at-fill"></i>
-                        andreybas04@gmail.com</a>
+                        andrey@bastun.su</a>
                 </li>
                 <li class="contact-list__item">
                     <a href="mailto:andrey.bastun@awara-it.com" class="item-btn"><i class="bi bi-microsoft-teams"></i>

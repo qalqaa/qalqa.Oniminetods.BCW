@@ -1,19 +1,14 @@
 <template>
     <div class="container">
         <div class="section-hero">
-            <h2 class="hero__title">About</h2>
+            <h2 class="hero__title">{{ $t('aboutTitle') }}</h2>
             <div class="hero__image-container">
                 <!-- TODO: СДЕЛАТЬ ЭФЕКТ НА КАРТИНКЕ КАК НА САЙТЕ С ДЕРЕВЬЯМИ -->
                 <img class="hero__image" src="../img/qalqaAva.jpg" alt="2123">
             </div>
-            <h2>qalqa / Андрей</h2>
-            <p class="hero__descr">Frontend Developer</p>
-            <p class="hero__about">About myself:
-                I've been working for an IT (SoftwareOne) company for a year now. During this time,
-                I improved both my
-                hard and soft skills, and also learned the basics of working practice. And for me this is just the
-                beginning of the journey. I've a main goal to become a full
-                stack developer and I'm moving towards this day after day!</p>
+            <h2>{{ $t('aboutName') }}</h2>
+            <p class="hero__descr">{{ $t('aboutDescr') }}</p>
+            <p class="hero__about">{{ $t('aboutAbout') }}</p>
         </div>
     </div>
 </template>
@@ -62,11 +57,11 @@
         height: 350px;
     }
 
-    .hero__image{
+    .hero__image {
         width: 350px;
     }
 
-    .hero__about{
+    .hero__about {
         max-width: 350px;
     }
 }

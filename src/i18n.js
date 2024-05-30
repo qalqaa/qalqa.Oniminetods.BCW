@@ -2,6 +2,7 @@ import { createI18n } from "vue-i18n";
 
 const messages = {
   en: {
+    headerTranslate: " Language",
     headerAbout: "About",
     headerStack: "Stack",
     headerContacts: "Contacts",

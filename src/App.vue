@@ -23,15 +23,30 @@ const changeLocale = (newLocale) => {
 
         <ul class="menu-list">
           <h1 class="logo_sm">q<i class="bi bi-braces "></i>qa</h1>
-          <li><a href="#" class="menu-item">{{ $t('headerAbout') }}</a></li>
-          <li><a href="#" class="menu-item">{{ $t('headerStack') }}</a></li>
-          <li><a href="#" class="menu-item">{{ $t('headerContacts') }}</a></li>
-          <li><a href="#" class="menu-item">{{ $t('headerFeature') }}</a></li>
+          <li><a href="#about" class="menu-item">{{ $t('headerAbout') }}</a></li>
+          <li><a href="#stack" class="menu-item">{{ $t('headerStack') }}</a></li>
+          <li><a href="#contacts" class="menu-item">{{ $t('headerContacts') }}</a></li>
+          <!-- <li><a href="#feature" class="menu-item">{{ $t('headerFeature') }}</a></li> -->
           <li><a href="#footer" class="menu-item">{{ $t('headerFooter') }}</a></li>
-          <label class="switch">
-            <input id="theme-toggle_sm" type="checkbox">
-            <span class="slider round"></span>
-          </label>
+          <div style="display: flex; gap: 20px">
+            <label class="switch">
+              <input id="theme-toggle_sm" type="checkbox">
+              <span class="slider round"></span>
+            </label>
+            <!-- <div class="translate">
+              <i id="translate__icon" class="bi bi-translate"></i>
+              <ul class="translate__list">
+                <li @click="changeLocale('en')" class="translate__item">
+                  <input class="radio" id="eng" type="radio" name="language" value="English" checked>
+                  <label class="translate__label" for="eng">English</label>
+                </li>
+                <li @click="changeLocale('ru')" class="translate__item">
+                  <input class="radio" id="rus" type="radio" name="language" value="Русский">
+                  <label class="translate__label" for="rus">Руссккий</label>
+                </li>
+              </ul>
+            </div> -->
+          </div>
         </ul>
       </div>
     </div>

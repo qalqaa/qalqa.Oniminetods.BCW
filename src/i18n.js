@@ -2,7 +2,6 @@ import { createI18n } from "vue-i18n";
 
 const messages = {
   en: {
-    headerTranslate: " Language",
     headerAbout: "About",
     headerStack: "Stack",
     headerContacts: "Contacts",
@@ -31,6 +30,8 @@ const messages = {
       "It's a bit about tech's that i can do, well or not at all, but i'm studying.",
     stackProjectsTitle: "That some links to my projects:",
     stackObject: "Object",
+    stackSneakerShop: "Sneaker Shop",
+    stackSneakerShopDescr: "(pilot Vue project)",
     stackObjectDescr: "(Some shit)",
 
     contactsTitle: "Contacts",
@@ -62,6 +63,8 @@ const messages = {
     stackDescr:
       "Немного о технологиях, которыми я владею, хорошо или не совсем, но учусь.",
     stackProjectsTitle: "Это ссылки на мои проекты:",
+    stackSneakerShop: "Магазин Кросовок",
+    stackSneakerShopDescr: "(пилотный проект на Vue)",
     stackObject: "Проект",
     stackObjectDescr: "Описание проекта",
 
